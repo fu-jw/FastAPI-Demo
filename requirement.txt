@@ -1,0 +1,13 @@
+fastapi[all]==0.111.0
+aioredis==2.0.1
+cos-python-sdk-v5==1.9.30
+PyJWT==2.8.0
+python-dotenv==1.0.1
+tortoise-orm[aiomysql]==0.21.3
+tencentcloud-sdk-python==3.0.1168
+qcloud-python-sts==3.1.6
+wechatpy==2.0.0a11
+qrcode[pil]==7.4.2
+alipay-sdk-python==3.7.156
+passlib==1.7.4
+sqlmodel==0.0.19
