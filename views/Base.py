@@ -2,13 +2,13 @@
 """
 @Created on : 2024/6/18 22:02
 @Author: Fredo
-@Des: 基本路由
+@Des: 视图路由
 """
 from fastapi import APIRouter
 
-apiRouter = APIRouter(prefix="/v1", tags=["api路由"])
+viewRouter = APIRouter(tags=['视图路由'])
 
 
-@apiRouter.get('/')
+@viewRouter.get('/')
 async def index():
-    return "RUOK"
+    return "R U OK"
