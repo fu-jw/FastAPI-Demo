@@ -5,7 +5,7 @@
 @Des: 基本路由
 """
 from fastapi import APIRouter
-from api.login import login
+from api.login import test,login
 
 apiRouter = APIRouter(prefix="/v1", tags=["api路由"])
 
@@ -20,5 +20,7 @@ async def index():
 1.Python装饰器写法，
 2.路由调用法，路由和处理函数分离【推荐】
 """
-apiRouter.get('/login')(login)
+apiRouter.get('/test')(test)
 # apiRouter.get('/login', tags=["api路由"], summary="登录接口")(login)
+
+apiRouter.post('/login')(login)

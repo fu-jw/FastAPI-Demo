@@ -4,8 +4,18 @@
 @Author: Fredo
 @Des: 登录路由
 """
+from pydantic import BaseModel
+
+
+class User(BaseModel):
+    username: str
+    password: str
 
 
 # 登录测试
-async def login():
-    return "login successfully"
+async def test():
+    return "test successfully"
+
+
+async def login(usr: User):
+    return usr

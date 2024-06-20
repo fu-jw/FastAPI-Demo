@@ -16,6 +16,7 @@ from core.Router import allRouter
 from core.Events import startup, stopping
 from core.Exception import http_error_handler, http422_error_handler, unicorn_exception_handler, UnicornException
 from core.Middleware import Middleware
+from fastapi.templating import Jinja2Templates
 
 application = FastAPI(
     debug=settings.APP_DEBUG,
@@ -56,5 +57,7 @@ application.add_middleware(
 
 # 静态资源目录
 application.mount('/static', StaticFiles(directory=os.path.join(os.getcwd(), "static")))
+# 写法3：将模板信息放到请求里。去掉state也可以（对应的返回时也要去掉）
+application.state.views = Jinja2Templates(directory=settings.TEMPLATES_DIR)
 
 app = application
