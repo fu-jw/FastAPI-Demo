@@ -8,7 +8,7 @@ from fastapi import APIRouter, Request
 # from fastapi.templating import Jinja2Templates
 from starlette.responses import HTMLResponse
 # from config import settings
-from views.home import home
+from views.home import home, reg_page, result_page
 
 viewRouter = APIRouter(tags=['视图路由'])
 
@@ -34,3 +34,5 @@ async def item(request: Request, id: str):
 
 # 写法4：完全分离
 viewRouter.get('/home/{id}', response_class=HTMLResponse)(home)
+viewRouter.get("/reg", response_class=HTMLResponse)(reg_page)
+viewRouter.post("/reg/form", response_class=HTMLResponse)(result_page)

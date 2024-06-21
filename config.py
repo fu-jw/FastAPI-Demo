@@ -6,12 +6,15 @@
 """
 
 import os.path
+from dotenv import load_dotenv, find_dotenv
 # from pydantic import BaseSettings
 from pydantic_settings import BaseSettings
 from typing import List
 
 
 class Config(BaseSettings):
+    #
+    load_dotenv(find_dotenv(), override=True)
     # 调试模式
     APP_DEBUG: bool = True
     # 项目信息
