@@ -30,11 +30,11 @@ async def result_page(req: Request, username: str = Form(...), password: str = F
     :param req:
     :return: html
     """
-    # return "hello"
-    # add_user = await User().create(username=username, password=password)
-    # print("插入的自增ID", add_user.pk)
-    # print("插入的用户名", add_user.username)
+    add_user = await User().create(username=username, password=password)
+    print("插入的自增ID", add_user.pk)
+    print("插入的用户名", add_user.username)
 
+    # values() 将查询到的每个对象转成字典
     user_list = await User().all().values()
     # 打印查询结果
     for user in user_list:

@@ -61,6 +61,6 @@ async def register_mysql(app: FastAPI):
     register_tortoise(
         app,
         config=DB_ORM_CONFIG,
-        generate_schemas=True,  # True 会去DB生成表，一次就好；False 不会。
+        generate_schemas=False,  # True 会去DB生成表，一次就好；False 不会。
         add_exception_handlers=True,
     )
